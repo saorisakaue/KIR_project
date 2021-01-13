@@ -53,7 +53,7 @@ labels = np.array([1,2,3,4])
 ratio = cov.loc[gene,:]
 copy.iloc[i,:] = np.array(pd.cut(ratio, cut_thres, labels=labels))
 
-copy.to_csv("process20200828/gene_copy/Coverage.with.noGL.detail.old.combined.copyN.csv")
+copy.to_csv(output_ploidy_csv)
 
 OUT = open(output_ploidy_file, "w")
 for i in range(len(copy.columns)):
