@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-# input vcfs after GenotypeGVCFs, and after splitting multiallelic sites.
-
+# input is a per-sample vcf after GenotypeGVCFs, and after splitting multiallelic sites.
 import gzip
 import numpy as np
 import sys
