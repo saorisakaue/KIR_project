@@ -7,6 +7,8 @@ import sys
 import pandas as pd
 import itertools
 
+per_sample_vcf_file =sys.argv[1]
+
 genes = ["KIR2DL1","KIR2DL2","KIR2DL3","KIR2DL5A;KIR2DL5B","KIR2DS1","KIR2DS2","KIR2DS3;KIR2DS5","KIR2DS4","KIR3DL1","KIR3DL2","KIR3DL3","KIR3DS1","KIR2DL5A;KIR2DL5B","KIR2DS3;KIR2DS5","KIR2DL4"]
 refs = ["KIR2DL1_001","KIR2DL2_0010101","KIR2DL3_0010101","KIR2DL5A","KIR2DS1_001","KIR2DS2_0010101","KIR2DS3","KIR2DS4_0010101","KIR3DL1_0010101","KIR3DL2_0010101","KIR3DL3_00101","KIR3DS1_010","KIR2DL5A_0010101","KIR2DS3_00101","KIR2DL4_00101"]
 
@@ -30,7 +32,7 @@ with open("./data/"+gene+".difpos.all.txt","rt") as file:
 			gene_header[gene] = line.rstrip().split("\t")
 
 
-## input real genotype and dosage info
+# input real genotype and dosage info
 for method in callmethod:
 	with gzip.open(per_sample_vcf_file,"rt") as file:
 		for line in file:
@@ -51,7 +53,7 @@ for method in callmethod:
 	
 	ploidy = len(dose)
 	
-	## output common variants for each gene (ref, alt and number) for each sample
+	# output common variants for each gene (ref, alt and number) for each sample
 	dosage_header = "#GENE\tPOS\tREF\tALT\t" + sample
 	gene_commonvar ={}
 	
@@ -142,7 +144,6 @@ for method in callmethod:
 			allelepool.append(type_dose[this_type])
 			allelepool_type.append(this_type)
 	
-	
 	# make combinations according to ploidy
 	uniq_type_dose_list = []
 	uniq_type_name_list = []
@@ -165,7 +166,7 @@ for method in callmethod:
 		ploid_name.append(name)
 		ploid_dose.append(dose)
 	
-	## check for ambiguous ploidies
+	# check for ambiguous ploidy
 	uniq_ploid_name = []
 	uniq_ploid_dose = []
 	tmp_dose_name = {}
@@ -179,8 +180,8 @@ for method in callmethod:
 		uniq_ploid_dose.append(np.array(dose))
 		uniq_ploid_name.append("-or-".join(tmp_dose_name[dose]))
 	
-	
-	## determine ploidy-combination for each sample
+	# determine ploidy-combination for each sample
+	# flag if the combination of alleles is potentially novel
 	sample_dose = np.array(geno,dtype="float") # float is for nans
 	count = 0
 	closeness = []
@@ -188,6 +189,7 @@ for method in callmethod:
 	for j in range(len(uniq_ploid_dose)):
 		if np.allclose(sample_dose,uniq_ploid_dose[j]):
 			SAMPLE_GENETYPE = uniq_ploid_name[j]
+			flag = "known"
 			count += 1
 		else:
 			diff = abs(sample_dose - uniq_ploid_dose[j])
@@ -202,9 +204,10 @@ for method in callmethod:
 			closeval = str(closeness[id])
 		closetype_out = "Close_to_" + "-OR-".join(CLOSETYPE) + "[score=" + closeval + "]"
 		SAMPLE_GENETYPE = closetype_out
+		flag = "potentially_novel"
 	
 	OUT = open(output_allele_file,"w")
-	out = "\t".join([sample,gene,SAMPLE_GENETYPE])
+	out = "\t".join([sample,gene,SAMPLE_GENETYPE,flag])
 	print(out, file=OUT)
 	OUT.close()
 
