@@ -1,0 +1,17 @@
+@HD	VN:1.5	SO:unsorted
+@SQ	SN:KIR2DL1	LN:14514	M5:d723d9dda653f83624e736abeaa25486	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DL2	LN:14539	M5:bde2e3570ef3f28c1cde9aa9761d5b58	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DL3	LN:14531	M5:5250360b91cda6187a88532c56257911	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DL4	LN:10906	M5:cb50d1e361c2c45dd056b055402b6596	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DL5A;KIR2DL5B	LN:9556	M5:6bc0daf39ca532d969c61161183ed1f5	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DP1	LN:12349	M5:6b3249480df0467771238fe50d42a5dd	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DS1	LN:14015	M5:31d0e9a6d9a3f9c1b363d25c85c8ce07	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DS2	LN:14313	M5:ef556f325bac5684d121753f5bb942bd	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DS3;KIR2DS5	LN:15021	M5:240e498f0697eb13422e14ace0a16a0a	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR2DS4	LN:15894	M5:b5b4ff39692b9d5dd45903e9189d3867	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR3DL1	LN:14341	M5:8f96250ccb93361f4a6d20e1c55ea5bd	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR3DL2	LN:16773	M5:6e1e2cf92a5cc256c60e50650e142b54	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR3DL3	LN:12020	M5:60213ad65af0fafaef9897687a49030f	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR3DP1	LN:3964	M5:eeb31567e507fa479b1ed8f954e274bf	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR3DS1	LN:14588	M5:8a729740f3432169b363de6874a11ec0	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
+@SQ	SN:KIR3DX1	LN:13116	M5:7212fb5103d2c41d480490ff36e9b0d8	UR:file:/share/project/sg/sakaue/KIR/REF20181110/bedcut.with3DS1.noGL.fasta
